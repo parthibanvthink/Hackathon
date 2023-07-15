@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_15_052201) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_15_095006) do
   create_table "food_management_groups", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "rolenumber"
+    t.string "rollnumber"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "food_managements", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "rolenumber"
-    t.date "start_time"
+    t.string "rollnumber"
+    t.string "date"
     t.string "type"
     t.string "selected_option"
     t.datetime "created_at", null: false
@@ -27,7 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_15_052201) do
   end
 
   create_table "help_desk_groups", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "rolenumber"
+    t.string "rollnumbera"
     t.integer "help_desk_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -55,7 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_15_052201) do
 
   create_table "projects", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "projectname"
-    t.string "rolenumber"
+    t.string "rollnumber"
     t.string "username"
     t.string "role"
     t.datetime "created_at", null: false
@@ -69,7 +69,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_15_052201) do
   end
 
   create_table "task_groups", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "rolenumber"
+    t.string "rollnumber"
     t.integer "task_id"
     t.integer "project_id"
     t.datetime "created_at", null: false
@@ -85,7 +85,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_15_052201) do
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "username"
-    t.string "rolenumber"
+    t.string "rollnumber"
     t.string "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

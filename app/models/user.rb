@@ -6,21 +6,21 @@ class User < ApplicationRecord
         elsif params[:password].blank?
             return failure_message("password is missing")
         else
-            user = User.find_by(username: params[:user_name])
+            user = User.where(username: params[:user_name]).first
             if user.blank?
                 return failure_message("user not found")
-            elsif user.rolenumber != params[:password]
-                puts user.rolenumber
+            elsif user.rollnumber != params[:password]
+                puts user.rollnumber
                 return failure_message("password is incorrect")
             else
-                return sucess_message("login successful")
+                return user
             end
         end
     end
 
     def self.failure_message(msg = "")
         {
-              status: ":failed",
+              status: "failed",
               contents: nil,
               message: msg
         }
@@ -28,7 +28,7 @@ class User < ApplicationRecord
 
     def self.sucess_message(msg = "")
         {
-              status: ":successful",
+              status: "successful",
               contents: nil,
               message: msg
         }
