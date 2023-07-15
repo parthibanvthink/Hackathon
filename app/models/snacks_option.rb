@@ -1,0 +1,2 @@
+class SnacksOption < ApplicationRecord
+end

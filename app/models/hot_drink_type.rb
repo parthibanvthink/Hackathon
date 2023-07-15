@@ -1,0 +1,2 @@
+class HotDrinkType < ApplicationRecord
+end

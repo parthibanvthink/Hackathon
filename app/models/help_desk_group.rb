@@ -1,0 +1,2 @@
+class HelpDeskGroup < ApplicationRecord
+end
